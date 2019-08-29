@@ -8,9 +8,12 @@
 
 #import "WKWebViewController.h"
 
-@interface WKWebViewController ()
-/// 변수 선언부
+@interface WKWebViewController (){
+    /// 변수 선언부
+    IBOutlet UIButton * iputBtn;
+}
 
+@property int wworld;
 
 /// 메소드 선언부
 /// 메소드 선언 연습
@@ -39,6 +42,8 @@
     inputBtn.titleLabel.text = @"touchUpInside";
     textView.text = @"";
     
+    [self setWorld:1];
+    NSLog(@"world의 수는 %d 이다", self.world);
 }
 
 -(void) viewWillAppear:(BOOL)animated {

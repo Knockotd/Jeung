@@ -11,11 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WKWebViewController : UIViewController {
-
+    // 멤버변수 선언
     IBOutlet UIButton * inputBtn;
     IBOutlet UITextView * textView;
     
 }
+
+@property int world;
+
 
 -(IBAction) touchUpInside;
 
