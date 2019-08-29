@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WKWebViewController : UIViewController
+@interface WKWebViewController : UIViewController {
+
+    IBOutlet UIButton * inputBtn;
+    IBOutlet UITextView * textView;
+    
+}
+
+-(IBAction) touchUpInside;
 
 @end
 

@@ -19,12 +19,13 @@
 -(void) argTwoUserMethod:(int)_a b:(int)_b; // 매개변수가 2개인 메소드 - 두번재 인자부터는 구분할 수 있는 이름을 넣어 주어야 함.
 -(NSString *) returnArgUserMethod:(int)_a b:(int)_b c:(NSString*)_c; // return값이 있는 메소드 - 괄호 안에 리턴 할 자료형을 작성해야 한다. string은 저렇게 *도 써야함..
 -(int) returnArgIntUserMethod:(int)_a b:(int)_b c:(int)_c; // return 값이 int인 메소드
-
-
+-(NSString *) inputStringMethod;
 
 @end
 
 @implementation WKWebViewController
+
+/// - MARK: 시스템 메소드
 
 -(void) viewDidLoad {
     [super viewDidLoad];
@@ -35,8 +36,22 @@
     int _intReturn = [self returnArgIntUserMethod:3 b:7 c:2];
     NSLog(@"returnArgIntUserMethod = %d", _intReturn);
     
+    inputBtn.titleLabel.text = @"touchUpInside";
+    textView.text = @"";
     
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:true];
     
+    /// 버튼을 누르면 해당 메소드가 실행되어 TextField를 채웁니다.
+    
+}
+
+/// - MARK: 사용자 메소드
+- (void)touchUpInside {
+    NSString*_str = [self inputStringMethod];
+    textView.text = [NSString stringWithFormat:@"%@ %@",textView.text, _str ];
 }
 
 /// 메소드 만들어 보기
@@ -67,6 +82,9 @@
     return _result;
 }
 
+-(NSString*) inputStringMethod {
+    return @"Hellow World";
+}
 
 ///
 
